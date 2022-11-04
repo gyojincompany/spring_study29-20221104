@@ -55,4 +55,16 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
+	@RequestMapping(value = "delete")
+	public String delete(HttpServletRequest request) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		String mid = request.getParameter("mid");
+		
+		dao.deleteDao(mid);
+		
+		return "redirect:list";
+	}
+	
 }
