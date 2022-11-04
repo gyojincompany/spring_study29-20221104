@@ -16,6 +16,7 @@
 			<th>글쓴이</th>
 			<th>한줄내용</th>
 			<th>삭제</th>
+			<th>수정</th>
 		</tr>
 		<c:forEach items="${list}" var="dto">
 		<tr align="center" height="40">
@@ -23,10 +24,11 @@
 			<td>${dto.mwriter }</td>
 			<td align="left" width="700">${dto.mcontent }</td>
 			<td><input type="button" value="×" onclick="javascript:window.location='delete?mid=${dto.mid }'"></td>
+			<td><input type="button" value="※" onclick="javascript:window.location='mview?mid=${dto.mid }'"></td>
 		</tr>
 		</c:forEach>
 		<tr>
-			<td colspan="4" align="right">
+			<td colspan="5" align="right">
 				<input type="button" value="한줄쓰기" onclick="javascript:window.location='writeForm'">
 			</td>
 		</tr>
